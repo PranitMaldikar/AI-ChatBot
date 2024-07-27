@@ -10,7 +10,7 @@ require('./Models/db');
 const PORT = process.env.PORT || 8080;
 
 app.use(cors({
-    origin: 'https://ai-chat-bot-ui.vercel.app',
+    origin: 'https://ai-chat-bot-ui.vercel.app/signup',
 }));
 
 app.get('/ping', (req, res) => {
