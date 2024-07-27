@@ -9,12 +9,14 @@ require('dotenv').config();
 require('./Models/db');
 const PORT = process.env.PORT || 8080;
 
+app.use(cors());
+
 app.get('/ping', (req, res) => {
     res.send('PONG');
 });
 
 app.use(bodyParser.json());
-app.use(cors());
+
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 
