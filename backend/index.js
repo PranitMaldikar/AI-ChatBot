@@ -9,7 +9,13 @@ require('dotenv').config();
 require('./Models/db');
 const PORT = process.env.PORT || 8080;
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://ai-chat-bot-ui.vercel.app',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
 
 app.get('/ping', (req, res) => {
     res.send('PONG');
